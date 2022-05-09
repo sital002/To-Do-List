@@ -3,6 +3,7 @@
 let addBtn=document.querySelector("#push");
 let inputField=document.querySelector("#new-task input");    
 chkEnter();
+
 addBtn.onclick=function(){
     CreateTask();
     ChkTaskstats();
@@ -23,11 +24,13 @@ function chkEnter(){
 }
 function CreateTask(){
     if(inputField.value.length==0){
-        alert("Enter a Task");
+        // addBtn.disabled=true;
+        // alert("Enter a Task");
         }
         else{
 
-            document.querySelector("#tasks").innerHTML+= `
+            document.querySelector("#tasks").innerHTML+=
+             `
             <div class="tasks">
             <span class="taskname">
             ${inputField.value}

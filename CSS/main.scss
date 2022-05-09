@@ -5,7 +5,8 @@
     font-family: 'Times New Roman', Times, serif;
 }
 body{
-    background: linear-gradient(to right,#f45785,#f646f5);
+    // background: linear-gradient(to right,#f45785,#f646f5);
+    background-image: linear-gradient(to right, #e648a2, #d655b8, #c162cb, #a66fda, #877ae5, #6a8af1, #4698f7, #00a4fa, #00b8fc, #00caf6, #00d9eb, #51e7de);
 }
 .container{
     display: flex;
@@ -42,14 +43,26 @@ body{
             padding: 10px 40px;
             border-radius: 6px;
             margin-left: 20px;
-            cursor: pointer;
-            color: #ffffff;
-            background: #f646f5;
+            // cursor: pointer;
+            cursor: not-allowed;
+            background-color: gray;
+            color: #a2a1a1;
+            border: none;
+            // background: #00a4fa;
         }
         }
 }
 #tasks{
     padding: 20px;
+}
+
+
+#input-field:valid ~ #push{
+    border: 2px solid black;
+    color: rgb(245, 241, 241);
+    background-color:#00a4fa;
+    cursor:pointer
+
 }
 .tasks{
     display: flex;
@@ -63,6 +76,7 @@ body{
         border-radius: 6px;
         // transform-origin: bottom center;
     }
+
     .delete{
 
         cursor: pointer;
@@ -70,7 +84,7 @@ body{
         padding: 10px;
         border-radius: 6px;
         color: #ffffff;
-        background: #f646f5;
+        background: #00a4fa;
     }
 }
 .completed{
