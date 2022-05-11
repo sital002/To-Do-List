@@ -83,4 +83,54 @@ body {
 
 .completed {
   text-decoration: line-through;
+}
+
+.pop-up {
+  height: 100px;
+  width: 400px;
+  background-color: rgb(34, 188, 60);
+  position: absolute;
+  border-radius: 12px;
+  right: 20px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  -webkit-animation: taskAdded 3s linear;
+          animation: taskAdded 3s linear;
+}
+
+@-webkit-keyframes taskAdded {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes taskAdded {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=main.css.map */

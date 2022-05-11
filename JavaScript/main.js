@@ -1,7 +1,11 @@
 
 // let current_tasks=document.querySelectorAll(".delete");
 let addBtn=document.querySelector("#push");
-let inputField=document.querySelector("#new-task input");    
+let inputField=document.querySelector("#new-task input"); 
+let popUpBox= document.querySelector("#pop-up");
+
+const addedMsg="Task Added Successfully";   
+const removeMsg="Task Removed Successfully";   
 chkEnter();
 
 addBtn.onclick=function(){
@@ -38,6 +42,7 @@ function CreateTask(){
             <button class="delete">DELETE</button>
             </div>
             `
+            popUpMsg(addedMsg,"green");
             inputField.value="";
             inputField.focus();
         }
@@ -47,6 +52,8 @@ function CreateTask(){
         let tasks=document.querySelectorAll(".taskname");
         for(i=0;i<current_tasks.length;i++){
             current_tasks[i].onclick=function(){
+                // popUpBox.style.backgroundColor="red";
+                popUpMsg(removeMsg,"red");
                 this.parentNode.remove();
             } }
             for(i=0;i<tasks.length;i++){
@@ -57,4 +64,16 @@ function CreateTask(){
     }
 
    
-    
+    function popUpMsg(Msg,color){
+       popUpBox.classList.add("pop-up");
+       popUpBox.style.backgroundColor=color;
+       popUpBox.innerHTML=
+        `
+        <span>${Msg}</span>
+
+        `
+        setTimeout(function(){
+            popUpBox.classList.remove("pop-up");
+            popUpBox.innerHTML="";
+        },3000);
+    }
